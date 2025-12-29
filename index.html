@@ -4,122 +4,159 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>3D Animation Portfolio</title>
+
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #111;
-        color: #fff;
-    }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #222;
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav .brand {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+nav .menu {
+    display: flex;
+    gap: 32px;
+}
+
+nav .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 70px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 800px;
+}
+
+/* SECTIONS */
+section {
+    padding: 120px 40px;
+}
+
+section h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section p {
+    color: #ccc;
+    line-height: 1.7;
+}
+
+/* PORTFOLIO */
+#portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#portfolio iframe {
+    width: 70%;
+    height: 400px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+}
+
+/* ABOUT & CONTACT */
+#about, #contact {
+    display: flex;
+    justify-content: center;
+}
+
+#about div, #contact div {
+    max-width: 800px;
+}
+
+/* ---------------- MOBILE RESPONSIVE ---------------- */
+@media (max-width: 768px) {
 
     nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: #222;
-        padding: 12px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1rem;
-        z-index: 1000;
-        height: 50px;
-        box-sizing: border-box;
-    }
-
-    nav .brand {
-        color: #fff;
-        font-weight: 700;
-        font-size: 1.2rem;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 16px;
     }
 
     nav .menu {
-        display: flex;
-        gap: 32px;
-        align-items: center;
-        overflow-x: auto;
+        gap: 16px;
         flex-wrap: wrap;
-    }
-
-    nav .menu a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-        white-space: nowrap;
-    }
-
-    @media (max-width:700px) {
-        nav { padding: 12px 18px; }
-        nav .menu { gap: 18px; }
+        justify-content: center;
     }
 
     .hero {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: calc(100vh - 72px);
-        margin-top: 72px;
-        text-align: center;
-        padding: 0 20px;
-    }
-
-    .hero .right-content {
-        max-width: 800px;
+        height: auto;
+        padding: 80px 16px;
     }
 
     .hero h1 {
-        font-size: 4rem;
-        font-weight: 800;
-        line-height: 1.1;
+        font-size: 2.4rem;
     }
 
     .hero p {
-        margin-top: 20px;
-        font-size: 1.2rem;
-        color: #ccc;
+        font-size: 1rem;
     }
 
     section {
-        padding: 120px 40px;
-        box-sizing: border-box;
+        padding: 80px 16px;
     }
 
     section h2 {
-        font-size: 3rem;
-        font-weight: 800;
-        margin-bottom: 20px;
-        text-align: center;
+        font-size: 2.2rem;
     }
 
-    section p {
-        color: #ccc;
-        font-size: 1.1rem;
-        line-height: 1.7;
+    #portfolio iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
-    #portfolio {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+}
 
-    #portfolio video {
-        width: 70%;
-        height: 70vh;
-        object-fit: cover;
-        margin-bottom: 40px;
+/* TABLET */
+@media (max-width: 1024px) {
+    #portfolio iframe {
+        width: 90%;
     }
-
-
-    @media (max-width:900px) {
-        .hero h1 {
-            font-size: 3rem;
-        }
-        .hero p {
-            font-size: 1rem;
-        }
-    }
+}
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -133,103 +170,54 @@
 </nav>
 
 <section id="home" class="hero">
-    <div class="right-content">
+    <div>
         <h1>My Portfolio</h1>
-        <p>Welcome to my 3D animation portfolio. Here you’ll find my best cinematic sequences, character animations, and creative projects that showcase my skills in visual storytelling and digital art.</p>
+        <p>
+            Welcome to my 3D animation portfolio. Here you’ll find cinematic sequences,
+            character animations, and creative projects showcasing my visual storytelling skills.
+        </p>
     </div>
 </section>
 
 <section id="portfolio">
     <h2>Portfolio</h2>
-    <iframe
-        width="70%"
-        height="400"
-        src="https://www.youtube.com/embed/XjHu8idSfCg"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-     <iframe
-        width="70%"
-        height="400"
-        src="https://www.youtube.com/embed/bGHB7BSEKDI"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-    <iframe
-        width="70%"
-        height="400"
-        src="https://www.youtube.com/embed/3yHVwJxXYXM"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-    <iframe
-        width="70%"
-        height="400"
-        src="https://www.youtube.com/embed/nB45EHf05tU"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-    <iframe
-        width="70%"
-        height="400"
-        src="https://www.youtube.com/embed/B7EBA_Sy1zg"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-     <iframe
-        width="70%"
-        height="400"
-        src="https://www.youtube.com/embed/AuC2dMuQXb4"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-    <iframe
-        width="70%"
-        height="400"
-        src="https://www.youtube.com/embed/bxcjwhOB1y8"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-    <iframe
-        width="70%"
-        height="400"
-        src="https://www.youtube.com/embed/uy4OteS08F0"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
 
+    <iframe src="https://www.youtube.com/embed/XjHu8idSfCg" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/bGHB7BSEKDI" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/3yHVwJxXYXM" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/nB45EHf05tU" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/B7EBA_Sy1zg" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/AuC2dMuQXb4" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/bxcjwhOB1y8" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/uy4OteS08F0" allowfullscreen></iframe>
 </section>
 
-<section id="about" style="display:flex; justify-content:center;">
-    <div style="max-width:800px;">
+<section id="about">
+    <div>
         <h2>About Me</h2>
-        <p>I am a passionate 3D artist and animator with a strong focus on creating visually engaging and cinematic content. I have developed hands-on experience using Blender for 3D modeling, texturing, rigging, and animation, along with After Effects and DaVinci Resolve for compositing, motion graphics, and professional video editing.<br><br>
-
-My skill set includes 3D modeling, character rigging, animation, lighting, rendering, and post-production, allowing me to handle projects from concept to final output. I enjoy experimenting with different styles and techniques to continuously improve my visual storytelling and technical workflow.<br><br>
-
-I am always eager to learn new tools, refine my skills, and take on creative challenges that push my work to the next level.</p>
+        <p>
+            I am a passionate 3D artist and animator with hands-on experience in
+            Blender, After Effects, and DaVinci Resolve. My skills include 3D modeling,
+            rigging, animation, lighting, rendering, and post-production.
+            <br><br>
+            I enjoy experimenting with styles and continuously improving my visual
+            storytelling and technical workflow.
+        </p>
     </div>
 </section>
 
-<section id="contact" style="display:flex; justify-content:center;">
-    <div style="max-width:800px;">
+<section id="contact">
+    <div>
         <h2>Contact</h2>
-        <p>Email: <a href="ravi180130@gmail.com" style="color:#ccc; text-decoration:none;">ravi180130@gmail.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/ravindra_kumar______?igsh=MzlhZWdkNnFrZm82" target="_blank" style="color:#ccc; text-decoration:none;">@ravindra_kumar______</a></p>
-        <p>Phone: <a href="tel:+918919188616" style="color:#ccc; text-decoration:none;">+91 8919188616</a></p>
+        <p>Email: <a href="mailto:ravi180130@gmail.com" style="color:#ccc;">ravi180130@gmail.com</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/ravindra_kumar______" target="_blank" style="color:#ccc;">@ravindra_kumar______</a></p>
+        <p>Phone: <a href="tel:+918919188616" style="color:#ccc;">+91 8919188616</a></p>
     </div>
 </section>
 
 </body>
 </html>
+
 
 
 
