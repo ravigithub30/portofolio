@@ -4,7 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>3D Animation Portfolio</title>
-
 <style>
 body {
     margin: 0;
@@ -24,9 +23,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    box-sizing: border-box;
+    height: 50px;
 }
 
 nav .brand {
+    color: #fff;
     font-weight: 700;
     font-size: 1.2rem;
 }
@@ -34,12 +36,16 @@ nav .brand {
 nav .menu {
     display: flex;
     gap: 32px;
+    align-items: center;
+    overflow-x: auto;
+    flex-wrap: wrap;
 }
 
 nav .menu a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 /* HERO */
@@ -47,37 +53,44 @@ nav .menu a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin-top: 70px;
+    height: calc(100vh - 72px);
+    margin-top: 72px;
     text-align: center;
     padding: 0 20px;
+}
+
+.hero .right-content {
+    max-width: 800px;
 }
 
 .hero h1 {
     font-size: 4rem;
     font-weight: 800;
+    line-height: 1.1;
 }
 
 .hero p {
     margin-top: 20px;
     font-size: 1.2rem;
     color: #ccc;
-    max-width: 800px;
 }
 
 /* SECTIONS */
 section {
     padding: 120px 40px;
+    box-sizing: border-box;
 }
 
 section h2 {
     font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
     text-align: center;
-    margin-bottom: 40px;
 }
 
 section p {
     color: #ccc;
+    font-size: 1.1rem;
     line-height: 1.7;
 }
 
@@ -90,9 +103,9 @@ section p {
 
 #portfolio iframe {
     width: 70%;
-    height: 400px;
+    height: 70vh;
+    object-fit: cover;
     margin-bottom: 40px;
-    border-radius: 12px;
 }
 
 /* ABOUT & CONTACT */
@@ -107,22 +120,23 @@ section p {
 
 /* ---------------- MOBILE RESPONSIVE ---------------- */
 @media (max-width: 768px) {
-
     nav {
         flex-direction: column;
         gap: 10px;
         padding: 12px 16px;
+        height: auto;
     }
 
     nav .menu {
         gap: 16px;
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .hero {
         height: auto;
-        padding: 80px 16px;
+        margin-top: 100px;
+        padding: 40px 16px;
     }
 
     .hero h1 {
@@ -139,12 +153,25 @@ section p {
 
     section h2 {
         font-size: 2.2rem;
+        margin-bottom: 30px;
     }
 
     #portfolio iframe {
         width: 100%;
         height: auto;
         aspect-ratio: 16 / 9;
+        margin-bottom: 30px;
+        border-radius: 10px;
+    }
+
+    #about div, #contact div {
+        width: 100%;
+    }
+
+    section p {
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: left;
     }
 }
 
@@ -152,6 +179,16 @@ section p {
 @media (max-width: 1024px) {
     #portfolio iframe {
         width: 90%;
+    }
+}
+
+/* HERO SMALL SCREEN ADJUST */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero p {
+        font-size: 1rem;
     }
 }
 </style>
@@ -170,18 +207,14 @@ section p {
 </nav>
 
 <section id="home" class="hero">
-    <div>
+    <div class="right-content">
         <h1>My Portfolio</h1>
-        <p>
-            Welcome to my 3D animation portfolio. Here you’ll find cinematic sequences,
-            character animations, and creative projects showcasing my visual storytelling skills.
-        </p>
+        <p>Welcome to my 3D animation portfolio. Here you’ll find my best cinematic sequences, character animations, and creative projects that showcase my skills in visual storytelling and digital art.</p>
     </div>
 </section>
 
 <section id="portfolio">
     <h2>Portfolio</h2>
-
     <iframe src="https://www.youtube.com/embed/XjHu8idSfCg" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/bGHB7BSEKDI" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/3yHVwJxXYXM" allowfullscreen></iframe>
@@ -195,14 +228,11 @@ section p {
 <section id="about">
     <div>
         <h2>About Me</h2>
-        <p>
-            I am a passionate 3D artist and animator with hands-on experience in
-            Blender, After Effects, and DaVinci Resolve. My skills include 3D modeling,
-            rigging, animation, lighting, rendering, and post-production.
-            <br><br>
-            I enjoy experimenting with styles and continuously improving my visual
-            storytelling and technical workflow.
-        </p>
+        <p>I am a passionate 3D artist and animator with a strong focus on creating visually engaging and cinematic content. I have developed hands-on experience using Blender for 3D modeling, texturing, rigging, and animation, along with After Effects and DaVinci Resolve for compositing, motion graphics, and professional video editing.<br><br>
+
+        My skill set includes 3D modeling, character rigging, animation, lighting, rendering, and post-production, allowing me to handle projects from concept to final output. I enjoy experimenting with different styles and techniques to continuously improve my visual storytelling and technical workflow.<br><br>
+
+        I am always eager to learn new tools, refine my skills, and take on creative challenges that push my work to the next level.</p>
     </div>
 </section>
 
